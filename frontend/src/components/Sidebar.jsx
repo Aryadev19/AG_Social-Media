@@ -1,15 +1,15 @@
-import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import { RiHomeFill } from 'react-icons/ri';
-import { IoIosArrowForward } from 'react-icons/io';
+import React from "react";
+import { NavLink, Link } from "react-router-dom";
+import { RiHomeFill } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
 
-import logo from '../assets/logo.png';
-import { categories } from '../utils/data';
+import logo from "../assets/logo.png";
+import { categories } from "../utils/data";
 
 const isNotActiveStyle =
-  'flex items-center px-5 pap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
+  "flex items-center px-5 pap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize";
 const isActiveStyle =
-  'flex items-center px-5 pap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize';
+  "flex items-center px-5 pap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize";
 
 const Sidebar = ({ user, closeToggle }) => {
   const handleCloseSidebar = () => {
@@ -17,7 +17,7 @@ const Sidebar = ({ user, closeToggle }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between bg-white h-full overflow-y-scroll min-w-210 hide-scrollbar">
+    <div className="flex flex-col justify-between bg-slate-700 h-full overflow-y-scroll min-w-210 hide-scrollbar">
       <div className="flex flex-col">
         <Link
           to="/"
@@ -59,20 +59,6 @@ const Sidebar = ({ user, closeToggle }) => {
           ))}
         </div>
       </div>
-      {user && (
-        <Link
-          to={`user-profile/${user._id}`}
-          className="flex my-5 mb-3 gap-2 p-2 items-center bg-white rounded-lg shadow-lg mx-3"
-          onClick={handleCloseSidebar}
-        >
-          <img
-            src={user.image}
-            className="w-20 h-20 rounded-full"
-            alt="user-profile"
-          />
-          <p>{user.userName}</p>
-        </Link>
-      )}
     </div>
   );
 };

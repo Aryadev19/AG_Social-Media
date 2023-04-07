@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { MasonryLayout, Spinner } from '.';
-import { client } from '../client';
-import { feedQuery, searchQuery } from '../utils/data';
+import { MasonryLayout, Spinner } from ".";
+import { client } from "../client";
+import { feedQuery, searchQuery } from "../utils/data";
 
 const Search = ({ searchTerm }) => {
   const [pins, setPins] = useState(null);
@@ -29,7 +29,7 @@ const Search = ({ searchTerm }) => {
     <div>
       {loading && <Spinner message="Searching for pins" />}
       {pins?.length !== 0 && <MasonryLayout pins={pins} />}
-      {pins?.length === 0 && searchTerm !== '' && !loading && (
+      {pins?.length === 0 && searchTerm !== "" && !loading && (
         <div className="mt-10 text-center text-xl">No Pins Found</div>
       )}
     </div>
